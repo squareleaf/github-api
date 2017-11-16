@@ -1,11 +1,14 @@
 <div>
-  <% @response.each do |response| %>
-    <p>
-      <h1><%= response["url"] %></h1>
-      State: <%= response["state"] %><br />
-      Title: <%= response["title"] %> <br />
-      User: <%= response["user"]["login"] %>
-    </p>
-  <% end %>
+  <h1>There are <%= @response.count %> pull requests in this repo.</h1>
+  <ol>
+    <% @response.each do |response| %>
+      <p>
+        <li><h3><%= response["url"] %></h3>
+        State: <%= response["state"] %><br />
+        Title: <%= response["title"] %> <br />
+        User: <%= response["user"]["login"] %></li>
+      </p>
+    <% end %>
+  </ol>
 </div>
 
